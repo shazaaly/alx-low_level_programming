@@ -1,6 +1,8 @@
 #include <stdio.h>
 /**
- *  main  is entry point fn 
+ *  main  is entry point
+ *  description : a function that prints a text
+ *  return : 0 
  */
 int main(void)
 {
