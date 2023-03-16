@@ -1,7 +1,8 @@
 #include <stdio.h>
 /*
  * main - Entry point
- *retuen 0
+ * description : entry point
+ *return 0
  */
 int main(void)
 {
