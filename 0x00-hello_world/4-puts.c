@@ -1,8 +1,5 @@
 #include <stdio.h>
-/*
- * main - Entry point
- * description : entry point
- */
+/* main  is entry point fn */
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
