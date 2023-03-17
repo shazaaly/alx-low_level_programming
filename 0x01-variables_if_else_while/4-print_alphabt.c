@@ -6,17 +6,17 @@
 
 /**
  * main - function : function prints letters
- * Return : value
+ * Return : value(0)
  */
 int main(void)
 {
 	int i;
 	char letters[26];
 
-	for(i = 0; i < 26; i++)
+	fo r (i = 0; i < 26; i++)
 	{
 		letters[i] = 'a' + i;
-		if( letters[i] != 'q' && letters[i] != 'e')
+		if(letters[i] != 'q' && letters[i] != 'e')
 		{
 		putchar(letters[i]);
 		}
