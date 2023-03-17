@@ -4,6 +4,7 @@
  * * main function entry : print letters
  * Return : success : 0
  */
+
 int main(void)
 {
 	char letters[26];
