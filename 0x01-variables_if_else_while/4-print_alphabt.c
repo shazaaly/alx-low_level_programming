@@ -15,11 +15,11 @@ int main(void)
 
 	for(i = 0; i < 26; i++)
 	{
-	letters[i] = 'a' + i;
+		letters[i] = 'a' + i;
 		if( letters[i] != 'q' && letters[i] != 'e')
-	{
-	putchar(letters[i]);
-	}
+		{
+		putchar(letters[i]);
+		}
 	}
 	putchar('\n');
 	return (0);
