@@ -10,9 +10,9 @@
 int main (void)
 {
 	int i;
-	char letters [26];
+	char letters [25];
 	    
-	for (i = 26; i >= 0; i--)
+	for (i = 25; i >= 0; i--)
 	 {
 		letters[i] = 'a' + i;
 		putchar(letters[i]);
