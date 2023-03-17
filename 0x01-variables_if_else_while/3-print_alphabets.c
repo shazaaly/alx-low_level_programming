@@ -15,7 +15,7 @@ int main(void)
 	lower[i] = 'a' + i;
         putchar(lower[i]);
 	}
-	
+	putchar('\n');	
 	for (i= 0; i< 26 ; i++)
         {
  	 upper[i] = 'A' + i;
