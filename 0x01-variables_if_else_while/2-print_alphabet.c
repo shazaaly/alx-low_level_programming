@@ -2,6 +2,7 @@
 
 /*
  * main function entry
+ * Description : print letters
  * Return : success : 0
  */
 int main(void)
