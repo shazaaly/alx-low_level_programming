@@ -13,7 +13,7 @@ int main(void)
 	for (i = 0; i< 26 ; i++)
 	{
 	lower[i] = 'a' + i;
-	putchar(lower[i])
+	putchar(lower[i]);
 	}
 	for (i = 0; i< 26 ; i++)
 	{
