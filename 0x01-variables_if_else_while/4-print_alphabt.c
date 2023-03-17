@@ -1,12 +1,10 @@
 #include <stdio.h>
-/*
- *  When I was having that alphabet soup, I never thought that it would pay off
- */
-
-
 /**
- * main - function : function prints letters
- * Return : value(0)
+ *  * main - function : function prints letters
+ *
+ * This function prints all lowercase letters except for 'e' and 'q'.
+ *
+ * Return: 0 upon successful completion of the progra
  */
 int main(void)
 {
@@ -16,7 +14,7 @@ int main(void)
 	for (i = 0; i < 26; i++)
 	{
 		letters[i] = 'a' + i;
-		if(letters[i] != 'q' && letters[i] != 'e')
+		if (letters[i] != 'q' && letters[i] != 'e')
 		{
 		putchar(letters[i]);
 		}
