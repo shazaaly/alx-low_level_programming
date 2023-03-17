@@ -1,8 +1,7 @@
 #include <stdio.h>
-
-/*
- * main function entry
- * Return : success : 0
+/**
+ * main prints letters
+ * return 0
  */
 int main(void)
 {
