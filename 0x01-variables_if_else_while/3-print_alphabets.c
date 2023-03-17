@@ -20,5 +20,6 @@ int main(void)
 	upper[i] = 'A' + i;
 	putchar(upper[i]);
 	}
+	putchar('\n');
 	return (0);
 }
