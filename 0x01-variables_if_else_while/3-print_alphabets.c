@@ -13,12 +13,12 @@ int main(void)
 	for (i= 0; i< 26 ; i++)
 	{
 	lower[i] = 'a' + i;
-	upper[i] = 'A' + i;
+        putchar(lower[i]);
 	}
 	
 	for (i= 0; i< 26 ; i++)
         {
-         putchar(lower[i]);
+ 	 upper[i] = 'A' + i;
          putchar(upper[i]);
 	}
 	return (0);
