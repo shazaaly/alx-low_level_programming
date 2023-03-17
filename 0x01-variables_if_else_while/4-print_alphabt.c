@@ -13,7 +13,7 @@ int main(void)
 	int i;
 	char letters[26];
 
-	fo r (i = 0; i < 26; i++)
+	for (i = 0; i < 26; i++)
 	{
 		letters[i] = 'a' + i;
 		if(letters[i] != 'q' && letters[i] != 'e')
