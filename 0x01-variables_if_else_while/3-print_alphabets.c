@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
- * main prints letters
+ * main prints letter
+ *print letters from a-z A-z
  * return 0
  */
 int main(void)
