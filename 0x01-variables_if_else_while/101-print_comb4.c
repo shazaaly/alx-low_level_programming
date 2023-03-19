@@ -25,8 +25,8 @@ int main(void)
 				putchar(z + '0');
 				if (x != 7 || y != 8 || z != 9)
 				{
-					putchar(' ');
 					putchar(',');
+					putchar(' );
 				}
 			}
 		}
