@@ -1,5 +1,7 @@
 #include <stdio.h>
 /*
+ * The numbers should range from 0 to 99
+ * 00 01 and 01 00 are considered as the same
  * prints all possible combinations of two two-digit numbers.
  */
 /**
@@ -21,6 +23,7 @@ int main(void)
 				{
 					putchar(i + '0');
 					putchar(j + '0');
+					putchar(' ');
 					putchar(z + '0');
 					putchar(w + '0');
 					if (i != 9 || j != 9)
