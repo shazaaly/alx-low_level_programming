@@ -5,9 +5,11 @@
  * prints all possible combinations of two two-digit numbers.
  */
 /**
- *  *main - function start entry point
- *  this function returns digits
- *  Return : 0 Success
+ *  * main - function : function prints letters
+ *
+ * This function prints all lowercase letters except for 'e' and 'q'.
+ *
+ * Return: 0 upon successful completion of the progra
  */
 int main(void)
 {
