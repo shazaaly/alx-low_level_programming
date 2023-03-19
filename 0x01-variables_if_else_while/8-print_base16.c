@@ -1,11 +1,10 @@
 #include <stdio.h>
-/*
- * base 16 in lowercase, followed by a new line.
- */
-/**
- * 8. Hexadecimal
- * main-function : displays letters
- * Return : Success (0)
+ /**
+ *  * main - function : function prints letters
+ *
+ * This function prints all lowercase letters except for 'e' and 'q'.
+ *
+ * Return: 0 upon successful completion of the progra
  */
 int main(void)
 {
