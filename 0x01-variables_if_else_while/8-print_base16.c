@@ -1,8 +1,7 @@
 #include <stdio.h>
 /*
- *  program that prints all the numbers of base 16 in lowercase, followed by a new line.
+ * base 16 in lowercase, followed by a new line.
  */
-
 /**
  * 8. Hexadecimal
  * main-function : displays letters
@@ -11,6 +10,7 @@
 int main(void)
 {
 	int i;
+
 	for (i = 0; i < 16; i++)
 	{
 		if (i < 10)
@@ -22,5 +22,6 @@ int main(void)
 			putchar(i - 10 + 'a');
 		}
 	}
+	putchar('\n');
 	return (0);
 }
