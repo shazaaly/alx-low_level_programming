@@ -1,5 +1,12 @@
 #include <stdio.h>
- /**
+/*
+ * Write a program that print
+ * 
+ * numbers of base 16 in lowercase,
+ *  followed by a new line. 
+ */
+
+/**
  *  * main - function : function prints letters
  *
  * This function prints all lowercase letters except for 'e' and 'q'.
