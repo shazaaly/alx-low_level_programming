@@ -1,11 +1,9 @@
 #include <stdio.h>
 /*
  * Write a program that print
- * 
  * numbers of base 16 in lowercase,
- *  followed by a new line. 
+ * followed by a new line. 
  */
-
 /**
  *  * main - function : function prints letters
  *
@@ -30,4 +28,3 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
-}
