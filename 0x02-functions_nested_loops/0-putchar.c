@@ -20,5 +20,5 @@ int main(void)
        _putchar(str[i]);
     }
     return (0);
-    putchar('\n'();
+    putchar('\n');
 }
