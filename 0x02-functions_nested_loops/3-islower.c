@@ -5,7 +5,7 @@
 *Write a function that checks for lowercase character.
 */
 /**
- *  *int _islower function - function prints letters
+ *  *int _islower - function prints letters
  *
  * This function prints all lowercase letters except for 'e' and 'q'.
  *
