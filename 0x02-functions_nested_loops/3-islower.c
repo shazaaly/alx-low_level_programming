@@ -13,6 +13,8 @@
  */
 int _islower(int c)
 {
+	c = (char)c;
+
 	if (islower(c))
 	{
 		return (1);
