@@ -1,5 +1,5 @@
-#include "main.h"
 #include <stdio.h>
+#include "main.h"
 /*
 *Write a function that checks for lowercase character.
 */
