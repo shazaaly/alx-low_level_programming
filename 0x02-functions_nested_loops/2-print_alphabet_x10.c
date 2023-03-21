@@ -4,7 +4,7 @@
  * function to print alphabet ten times
  * /
 /**
-*  * main - function : function prints letters
+*  *print_alphabet_x10 : function prints letters
 *
 * This function prints all lowercase letters except for 'e' and 'q'.
 *
