@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 /*
- *Write a function that prints the alphabet 
- */
+*Write a function that prints the alphabet. 
+*/
 /**
  * * print_alphabet - function : function prints letters
  *
