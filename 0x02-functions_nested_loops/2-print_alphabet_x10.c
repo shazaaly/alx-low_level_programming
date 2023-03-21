@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 /*
-* function to print alphabet ten times
-* terminated with line
+*Write a function that prints 10 times the alphabet,
+*in lowercase, followed by a new line. 
 */
 /**
 *  *print_alphabet_x10 : function prints letters
