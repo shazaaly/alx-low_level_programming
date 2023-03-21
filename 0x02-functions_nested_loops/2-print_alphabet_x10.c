@@ -2,10 +2,10 @@
 #include "main.h"
 /*
 * function to print alphabet ten times
+* terminated with line
 */
-
 /**
-*  *print_alphabet : function prints letters
+*  *print_alphabet_x10 : function prints letters
 *
 * This function prints all lowercase letters except for 'e' and 'q'.
 *
@@ -15,11 +15,12 @@ void print_alphabet_x10(void)
 {
 	int i;
 	char c;
+
 	for (i = 0; i < 10; i++)
 	{
 		for (c = 'a'; c <= 'z'; c++)
 		{
-			putchar(c);
+			_putchar(c);
 		}
 		_putchar('\n');
 	}
