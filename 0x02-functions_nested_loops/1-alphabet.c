@@ -11,7 +11,7 @@
  *
  * Return: 0 upon successful completion of the progra
  */
-int main(void)
+void print_alphabet(void)
 {
 	char i;
 
@@ -19,6 +19,6 @@ int main(void)
 	{
 		_putchar(i);
 	}
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }
