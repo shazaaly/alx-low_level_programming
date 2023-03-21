@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 /*
- * _islower - function that checks for lowercase character.
+* _islower - function that checks for lowercase character.
+* return 1 or 0
 */
 /**
 *  *int _islower - function prints letters small caps.
