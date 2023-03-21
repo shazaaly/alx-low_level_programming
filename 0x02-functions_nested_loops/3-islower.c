@@ -5,7 +5,7 @@
 * return 1 or 0
 */
 /**
-*  *int _islower - function prints letters small caps.
+* * _islower - function prints letters small caps.
 *
 *This function prints all lowercase letters except.
 *Parameters - integer
