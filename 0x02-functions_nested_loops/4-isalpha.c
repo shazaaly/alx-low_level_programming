@@ -1,10 +1,10 @@
 #include <stdio.h>
 /*
-* int _isalpha - function that checks for lowercase character.
+* _isalpha - function that checks for lowercase character.
 * return 1 or 0
 */
 /**
-* * int _isalpha - function prints letters small caps and upper.
+* *  _isalpha - function prints letters small caps and upper.
 *
 *This function prints all small and upper alpha.
 *Parameters - integer
@@ -13,7 +13,7 @@
 */
 int _isalpha(int c)
 {
-	if ((c >= 65 && c<= 90) || (c >= 97 && c <= 120))
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 120))
 	{
 		return (1);
 	}
