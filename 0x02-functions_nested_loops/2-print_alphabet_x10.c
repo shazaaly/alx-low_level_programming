@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 /*
- * function to print alphabet ten times
- */
+* function to print alphabet ten times
+*/
  
 /**
 *  *print_alphabet : function prints letters
@@ -25,4 +25,3 @@ void print_alphabet(void)
 		_putchar('\n');
 	}
 }
-
