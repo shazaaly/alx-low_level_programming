@@ -4,12 +4,11 @@
  * _islower - function that checks for lowercase character.
 */
 /**
- *  *int _islower - function prints letters
- *
- * This function prints all lowercase letters except for 'e' and 'q'.
- *
- * Return: 0 upon successful completion of the progra
- */
+*  *int _islower - function prints letters small caps.
+*
+* This function prints all lowercase letters except.
+*
+*/
 int _islower(int c)
 {
 	if (c >= 97 && c <= 122)
