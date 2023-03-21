@@ -5,7 +5,7 @@
  * in lowercase, followed by a new line.
  */
 /**
- *  * main - function : function prints letters
+ * * print_alphabet - function : function prints letters
  *
  * This function prints all lowercase letters except for 'e' and 'q'.
  *
