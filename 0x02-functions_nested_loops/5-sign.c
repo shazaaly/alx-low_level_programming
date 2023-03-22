@@ -30,5 +30,4 @@ int print_sign(int n)
 		putchar('0');
 	}
 	putchar('\n');
-	return (0);
 }
