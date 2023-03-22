@@ -5,12 +5,11 @@
 * return 1 or 0
 */
 /**
-* * print_sign - function prints letters small caps.
+* * print_sign : function prints letters small caps.
 *
 * This function prints all sign.
-* Parameters - intege
-* Returns 0 and prints 0 if n is zero
-* Returns -1 and prints - if n is less than zero
+* Parameters - integer
+* Return: 0 and prints 0 if n is zero
 */
 int print_sign(int n)
 {
@@ -19,7 +18,7 @@ int print_sign(int n)
 		_putchar('+');
 		return (1);
 	}
-	else if ( n == 0)
+	else if (n == 0)
 	{
 		_putchar('0');
 		return (0);
