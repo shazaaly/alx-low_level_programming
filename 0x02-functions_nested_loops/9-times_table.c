@@ -14,15 +14,16 @@ void times_table(void)
             if (res < 10)
             {
                _putchar(res + '0');
-                _putchar(44);
-		_putchar(' ');
-                _putchar(' ');
+	       _putchar(44);
+	       _putchar(' ');
+               _putchar(' ');
             }
             else
             {
                 _putchar(res / 10 + '0');
                 _putchar(res % 10 + '0');
-                _putchar(' ');
+               _putchar(44);
+	       	_putchar(' ');
             }
         }
         putchar('\n');
