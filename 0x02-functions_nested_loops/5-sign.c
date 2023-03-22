@@ -5,11 +5,11 @@
 * return 1 or 0
 */
 /**
-* * print_sign : function prints letters small caps.
+* print_sign - prints the sign of a number
 *
-* This function prints all sign.
-* Parameters - integer
-* Return: 0 and prints 0 if n is zero
+* @n: the number to check
+*
+* Return: 1 if n is positive, -1 if n is negative, 0 otherwise
 */
 int print_sign(int n)
 {
