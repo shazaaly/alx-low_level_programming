@@ -11,7 +11,7 @@ void print_most_numbers(void)
 	int num = 0;
 
 	do {
-		if (num ==2 || num == 4)
+		if (num == 2 || num == 4)
 		{
 			num++;
 			continue;
