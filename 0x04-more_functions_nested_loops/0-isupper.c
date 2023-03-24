@@ -12,7 +12,7 @@ int _isupper(int c)
 	{
 		return (1);
 	}
-	if (c >= 97 && c <= 120)
+	else
 	{
 		return (0);
 	}
