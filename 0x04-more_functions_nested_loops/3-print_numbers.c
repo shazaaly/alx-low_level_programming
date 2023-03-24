@@ -7,12 +7,11 @@
 */
 void print_numbers(void)
 {
-	int nums[] = {49, 50, 51, 52, 53, 54, 55, 56, 57};
-	int i;
+	int num = 0;
 
-	for (i = 0; i < 9; i++)
-	{
-		_putchar(nums[i]);
-	}
+	do{
+		_putchar(num + 48);
+		num ++;
+	}while (num >= 0 && num <= 9);
 	_putchar('\n');
 }
