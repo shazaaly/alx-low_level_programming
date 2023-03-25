@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 /**
 * main - prints the numbers from 1 to 100,
 * replacing multiples of 3 with "Fizz",
