@@ -34,7 +34,14 @@ for (i = 1; i <= 100; i++)
 		printf("%d", i);
 		printf(" ");
 	}
+	if (i != 100)
+	{
+		printf(" ");
+	}
+	else
+	{
+		printf("\n");
+	}
 }
-printf("\n");
 return (0);
 }
