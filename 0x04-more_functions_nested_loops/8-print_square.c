@@ -15,9 +15,9 @@ void print_square(int size)
 	int rows;
 	int cols;
 
-	for (rows = 0; rows <= size; rows++)
+	for (rows = 1; rows <= size; rows++)
 	{
-		for (cols = 0; cols < size; cols++)
+		for (cols = 1; cols < size; cols++)
 		{
 			_putchar('#');
 		}
