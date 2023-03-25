@@ -12,9 +12,8 @@
 int main(void)
 {
 int i;
-int n = 100;
 
-for (i = 0; i <= n; i++)
+for (i = 0; i <= 100; i++)
 {
 	if (i % 5 == 0 && i % 3 == 0)
 	{
