@@ -13,19 +13,19 @@ int main(void)
 {
 int i;
 
-for (i = 0; i <= 100; i++)
+for (i = 1; i <= 100; i++)
 {
 	if (i % 5 == 0 && i % 3 == 0)
 	{
 	printf("%s", "FizzBuzz");
 	printf("%c", ' ');
 	}
-	else if (i % 3 == 0)
+	else if (i % 3 == 0 && !(i % 5 == 0))
 	{
 		printf("%s", "Fizz");
 		printf("%c", ' ');
 	}
-	else if (i % 5 == 0)
+	else if (i % 5 == 0 && !(i % 3 == 0))
 	{
 		printf("%s", "Buzz");
 		printf("%c", ' ');
@@ -36,4 +36,5 @@ for (i = 0; i <= 100; i++)
 		printf("%c", ' ');
 	}
 }
+printf("\n")
 }
