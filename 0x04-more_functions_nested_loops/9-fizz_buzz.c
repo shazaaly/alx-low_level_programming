@@ -36,5 +36,5 @@ for (i = 1; i <= 100; i++)
 		printf("%c", ' ');
 	}
 }
-printf("\n")
+printf("\n");
 }
