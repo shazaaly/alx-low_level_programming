@@ -8,7 +8,7 @@
 *
 * Return: void
 *
-* Description: The function uses the _putchar() function to print characters.
+* Description: The function uses the _putchar() to print characters.
 */
 void print_square(int size)
 {
