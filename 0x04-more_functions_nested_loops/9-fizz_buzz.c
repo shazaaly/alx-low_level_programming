@@ -17,23 +17,23 @@ for (i = 1; i <= 100; i++)
 {
 	if (i % 5 == 0 && i % 3 == 0)
 	{
-	printf("%s", "FizzBuzz");
-	printf("%c", ' ');
+	printf("FizzBuzz");
+	printf(" ");
 	}
 	else if (i % 3 == 0 && !(i % 5 == 0))
 	{
-		printf("%s", "Fizz");
-		printf("%c", ' ');
+		printf("Fizz");
+		printf(" ");
 	}
 	else if (i % 5 == 0 && !(i % 3 == 0))
 	{
-		printf("%s", "Buzz");
-		printf("%c", ' ');
+		printf("Buzz");
+		printf(" ");
 	}
 	else
 	{
 		printf("%d", i);
-		printf("%c", ' ');
+		printf(" ");
 	}
 }
 printf("\n");
