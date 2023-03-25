@@ -22,10 +22,11 @@ void print_square(int size)
 
 	while (rows < size)
 	{
-		for (cols = 0; cols <= size; cols++)
+		for (cols = 0; cols < size; cols++)
 		{
 			_putchar('#');
 		}
 		_putchar('\n');
+		rows++;
 	}
 }
