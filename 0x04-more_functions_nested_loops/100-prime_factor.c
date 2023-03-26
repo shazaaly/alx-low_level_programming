@@ -9,21 +9,19 @@
 */
 int main(void)
 {
-    long long i;
-    long long num = 612852475143;
+long long i;
+long long num = 612852475143;
 
-    for (i = 2; i <= num; i++)
-    {
-        while (num != i && num % i == 0)
-        {
-            if (i % 2 != 0)
-            {
-                num = num / i;
-            }
-        }
-    }
-
-    printf("%ld\n", num);
-
-    return 0;
+	for (i = 2; i <= num; i++)
+	{
+		while (num != i && num % i == 0)
+	{
+		if (i % 2 != 0)
+		{
+			num = num / i;
+		}
+	}
+	}
+	printf("%ld\n", num);
+	return 0;
 }
