@@ -22,6 +22,6 @@ long long num = 612852475143;
 		}
 	}
 	}
-	printf("%ld\n", num);
+	printf("%lld\n", num);
 	return (0);
 }
