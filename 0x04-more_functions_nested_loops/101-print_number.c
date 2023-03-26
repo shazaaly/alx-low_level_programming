@@ -6,6 +6,9 @@
 * @n: The integer to print
 *
 * This function takes an integer @n as input and prints it to the standard
+* output using the printf function. The integer is printed as a decimal
+* number with no leading zeros or sign.
+*
 * Return: None
 */
 void print_number(int n)
@@ -17,7 +20,7 @@ void print_number(int n)
 		_putchar('-');
 		num = -num;
 	}
-	if((n / 10) > 0)
+	if ((n / 10) > 0)
 	{
 		print_number(num / 10);
 	}
