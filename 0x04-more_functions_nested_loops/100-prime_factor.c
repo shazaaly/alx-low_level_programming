@@ -18,10 +18,10 @@ long long num = 612852475143;
 	{
 		if (i % 2 != 0)
 		{
-			num = num / i;
+			num /= i;
 		}
 	}
 	}
 	printf("%ld\n", num);
-	return 0;
+	return (0);
 }
