@@ -9,8 +9,8 @@
 */
 int main(void)
 {
-long long i;
-long long num = 612852475143;
+	long i;
+	long num = 612852475143;
 
 	for (i = 2; i <= num; i++)
 	{
@@ -19,6 +19,6 @@ long long num = 612852475143;
 		num /= i;
 	}
 	}
-	printf("%lld\n", num);
+	printf("%ld\n", num);
 	return (0);
 }
