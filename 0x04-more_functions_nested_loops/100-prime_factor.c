@@ -16,11 +16,7 @@ long long num = 612852475143;
 	{
 		while (num != i && num % i == 0)
 	{
-		if (i % 2 != 0)
-		{
-			num /= i;
-		}
-		i++;
+		num /= i;
 	}
 	}
 	printf("%lld\n", num);
