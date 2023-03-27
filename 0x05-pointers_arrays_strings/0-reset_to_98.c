@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
-* update_to_98 - updates the value of an integer variable to 98
+* reset_to_98 - updates the value of an integer variable to 98
 * @n: a pointer to an integer variable
 *
 * This function takes a pointer to an integer variable and updates its value
