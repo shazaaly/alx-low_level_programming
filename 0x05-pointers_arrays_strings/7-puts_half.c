@@ -6,23 +6,29 @@
 */
 void puts_half(char *str)
 {
-    int i = 0;
 
+	 int i = 0;
+    int j;
+
+    // Count the length of the string
     while (str[i] != '\0')
     {
         ++i;
     }
+
+    // Print the second half of the string
     if (i % 2 == 0)
     {
-	    int j = i-1;
-
-        for (; j >= i / 2; j--)
+        j = (i - 1) / 2;
+        for (; j < i; j++)
         {
             _putchar(str[j]);
         }
     }
     else
     {
-        _putchar(str[j] + 1);
+        j = i / 2 + 1;
+        _putchar(str[j]);
     }
+    _putchar('\n');
 }
