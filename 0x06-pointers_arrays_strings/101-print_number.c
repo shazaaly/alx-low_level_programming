@@ -13,10 +13,10 @@ void print_number(int n)
 		_putchar('-');
 		num = -n;
 	}
-	if (n / 10)
+	if (num / 10)
 	{
-		print_number(n);
+		print_number(num);
 	}
-	_putchar(n % 10 + '0');
+	_putchar(num % 10 + '0');
 	return (0);
 }
