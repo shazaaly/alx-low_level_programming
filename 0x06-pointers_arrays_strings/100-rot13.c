@@ -2,7 +2,6 @@
 /**
 * rot13 - Encodes a string using ROT13 substitution cipher.
 * @s: String to be encoded.
-*
 * Return: Pointer to the encoded string.
 */
 char *rot13(char *s)
@@ -15,7 +14,7 @@ char *rot13(char *s)
 
 	while (*s)
 	{
-		for (i = 0; i < 52; i++)
+		for (i = 0; i < 26; i++)
 		{
 			if (*s == in[i])
 			{
