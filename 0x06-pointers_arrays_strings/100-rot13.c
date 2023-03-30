@@ -15,7 +15,7 @@ char *rot13(char *s)
 
 	while (*s)
 	{
-		for (i = 0; i <= 52; i++)
+		for (i = 0; i < 52; i++)
 		{
 			if (*s == in[i])
 			{
