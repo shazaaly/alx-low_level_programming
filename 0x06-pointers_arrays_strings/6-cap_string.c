@@ -10,6 +10,7 @@
 char *cap_string(char *str)
 {
 	int i;
+	char *ptr =str;
 
 	while (str[i] != '\0')
 	{
@@ -19,5 +20,5 @@ char *cap_string(char *str)
 		}
 		i++;
 	}
-	return (str);
+	return (ptr);
 }
