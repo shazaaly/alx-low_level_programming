@@ -4,11 +4,12 @@
 * @s: String to be encoded.
 * Return: Pointer to the encoded string.
 */
+
 char *rot13(char *s)
 {
-	char *ptr = s;
-	int i, j;
+	int i;
 
+	char *ptr = s;
 	char in[] = "abcdefghijklmnopqrstuvwxyz";
 	char out[] = "nopqrstuvwxyzabcdefghijklm";
 
