@@ -8,6 +8,7 @@
 */
 char *leet(char *str)
 {
+	char *pt = str;
 	char keys[] = {'A', 'O', 'E', 'T', 'L'};
 	char values[] = {4, 3, 0, 7, 1};
 	int i;
@@ -23,6 +24,6 @@ char *leet(char *str)
 		}
 		str++;
 	}
-	return str;
+	return (pt);
 
 }
