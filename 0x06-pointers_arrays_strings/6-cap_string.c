@@ -7,15 +7,14 @@
 char *cap_string(char *str)
 {
 	int i;
-	char *ptr = str;
-
+	
 	while (str[i] != '\0')
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			str[i] = str[i] - ('a' - 'A');
+			str[i] = str[i] - 32;
 		}
 		i++;
 	}
-	return (ptr);
+	return (str);
 }
