@@ -16,6 +16,7 @@ char *_strstr(char *haystack, char *needle)
 		if (*p1 == *p2)
 		{
 			char *m = p1;
+
 			while (*m && *p2 && *p2 == *m)
 			{
 				p2++;
@@ -29,7 +30,5 @@ char *_strstr(char *haystack, char *needle)
 		}
 		p1++;
 	}
-
-
 	return (NULL);
 }
