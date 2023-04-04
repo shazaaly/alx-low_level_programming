@@ -18,7 +18,7 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (s[i] == accept[j] || s[i] == 44 || s[i] == 32)
 			{
-				return (s);
+				return (s + i);
 			}
 		}
 	}
