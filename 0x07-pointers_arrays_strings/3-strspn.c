@@ -25,11 +25,11 @@ unsigned int _strspn(char *s, char *accept)
 				counter++;
 				break;
 			}
-			if (accept[j] == '\0')
-			{
-				break;
-			}
 		}
+		if (accept[j] == '\0')
+		{
+			break;
+			}
 	}
 	return (counter);
 }
