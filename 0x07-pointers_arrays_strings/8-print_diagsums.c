@@ -8,7 +8,7 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, j, main_diagonal_sum = 0, sec_diagonal_sum = 0;
+	int i, main_diagonal_sum = 0, sec_diagonal_sum = 0;
 
 	for (i = 0; i < size; i++)
 	{
@@ -16,5 +16,4 @@ void print_diagsums(int *a, int size)
 		sec_diagonal_sum += *(a + (i * size) + (size - 1 - i));
 	}
 printf("%d, %d\n", main_diagonal_sum, sec_diagonal_sum);
-
 }
