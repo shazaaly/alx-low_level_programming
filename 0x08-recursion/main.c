@@ -10,7 +10,7 @@ int _strlen_recursion(char *s)
 	}
 	else
 	{
-	return (1 + _strlen_recursion(s + 1));
+		return (_strlen_recursion(s + 1) + 1);
 	}
 }
 
@@ -24,7 +24,7 @@ int main(void)
 {
     int n;
 
-    n = _strlen_recursion("Corbin Coleman");
+    n = _strlen_recursion("Shaza Aly Othman  ");
     printf("%d\n", n);
     return (0);
 }
