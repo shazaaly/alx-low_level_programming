@@ -2,14 +2,16 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void _print_rev_recursion(char *s)
+int _strlen_recursion(char *s)
 {
 	if (*s == '\0')
 	{
-		return;
+		return (0);
 	}
-	_print_rev_recursion(s + 1);
-	_putchar(*s);
+	else
+	{
+	return (1 + _strlen_recursion(s + 1));
+	}
 }
 
  int _putchar(char c)
@@ -20,6 +22,9 @@ void _print_rev_recursion(char *s)
 
 int main(void)
 {
-    _print_rev_recursion("\nColton Walker");
+    int n;
+
+    n = _strlen_recursion("Corbin Coleman");
+    printf("%d\n", n);
     return (0);
 }
