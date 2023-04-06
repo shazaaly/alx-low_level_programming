@@ -8,10 +8,11 @@
 int is_prime_number(int n)
 {
 	int i = 0;
+
 	if (n <= 0)
 	{
 		return (0);
 	}
-	return is_prime_number(n % i) == 0 ? 1 : 0;
-
+	return (is_prime_number(n % i) == 0 ? 1 : 0);
+	++i;
 }
