@@ -2,21 +2,20 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int _pow_recursion(int x, int y)
+int _sqrt_recursion(int n)
 {
-	if (y < 0)
+	int i = 1;
+	if (n < 0)
 	{
 		return (-1);
 	}
-	else if(y == 0)
+	if (i > n / 2)
 	{
-		return (1);
+		return (-1);
 	}
-	else{
-		return(x * _pow_recursion(x, y - 1));
-	}
-}
+	return (_sqrt_recursion(i * i)) == n ? i : ++i;
 
+}
  int _putchar(char c)
 {
 	return (write(1, &c, 1));
@@ -26,17 +25,17 @@ int main(void)
 {
     int r;
 
-    r = _pow_recursion(1, 10);
+    r = _sqrt_recursion(1);
     printf("%d\n", r);
-    r = _pow_recursion(1024, 0);
+    r = _sqrt_recursion(1024);
     printf("%d\n", r);
-    r = _pow_recursion(2, 16);
+    r = _sqrt_recursion(16);
     printf("%d\n", r);
-    r = _pow_recursion(5, 2);
+    r = _sqrt_recursion(17);
     printf("%d\n", r);
-    r = _pow_recursion(5, -2);
+    r = _sqrt_recursion(25);
     printf("%d\n", r);
-    r = _pow_recursion(-5, 3);
+    r = _sqrt_recursion(-1);
     printf("%d\n", r);
     return (0);
 }
