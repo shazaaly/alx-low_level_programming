@@ -1,4 +1,3 @@
 #!/bin/bash
-gcc -c *.c -std=gnu99 -Wall -Werror -Wextra -pedantic
+gcc -c *.c
 ar rcs liball.a *.o
-
