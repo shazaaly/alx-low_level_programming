@@ -27,20 +27,17 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
-	for (i = 0; argv[1][i] != '\0'; i++)
+	if (!isdigit(argv[1]))
 	{
-		if (!isdigit(argv[1][i]))
-		{
-			printf("Error\n");
-			return (1);
-		}
+		printf("Error\n");
+		return (1);
 	}
 
-		for (i = 0; i < size; i++)
-		{
-			coins += amount / cents[i];
-			amount %= cents[i];
-		}
-			printf("%d", coins);
-			return (0);
+	for (i = 0; i < size; i++)
+	{
+		coins += amount / cents[i];
+		amount %= cents[i];
+	}
+	printf("%d", coins);
+	return (0);
 }
