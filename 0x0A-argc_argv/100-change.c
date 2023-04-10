@@ -15,6 +15,11 @@ int main(int argc, char *argv[])
 	int amount = atoi(argv[1]);
 	int size = sizeof(cents) / sizeof(int);
 
+	if (amount < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
 	if (argc != 2)
 	{
 		printf("Error\n");
