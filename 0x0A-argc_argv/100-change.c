@@ -11,36 +11,32 @@
 int main(int argc, char *argv[])
 {
 	int i;
-	int amount = atoi(argv[1]);
+	int amount;
 	int coins = 0;
 	int cents[] = {25, 10, 5, 2, 1};  /*sorted descend*/
 	int size = sizeof(cents) / sizeof(int);
 
-	if (argc != 2)
+	if (argc < 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	amount = atoi(argv[1]);
 
 	if (amount < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
-	for (i = 0; argv[1][i] != '\0'; i++)
+	for (i = 0; i < size; i++)
 	{
-		if (!isdigit(argv[1][i]))
+		coins += amount / cents[i];
+		amount %= cents[i];
+		if (amount == 0)
 		{
-			printf("Error\n");
-			return (1);
+			break;
 		}
 	}
-
-		for (i = 0; i < size; i++)
-		{
-			coins += amount / cents[i];
-			amount %= cents[i];
-		}
-			printf("%d", coins);
-			return (0);
+		printf("%d\n", coins);
+		return (0);
 }
