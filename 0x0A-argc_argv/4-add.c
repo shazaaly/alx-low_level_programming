@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 			printf("0\n");
 			return (0);
 		}
-		if (atoi(argv[i]))
+		if (isdigit(argv[i][0]) || isdigit(argv[i][0]) == '-' || isdigit(argv[i][1]))
 		{
 			sum += atoi(argv[i]);
 		}
