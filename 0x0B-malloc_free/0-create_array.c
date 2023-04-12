@@ -13,8 +13,8 @@
 char *create_array(unsigned int size, char c)
 {
 	char *arr;
-	 char *s;
-	 unsigned int i;
+	char *s;
+	unsigned int i;
 
 	if (size == 0)
 	{
@@ -24,7 +24,7 @@ char *create_array(unsigned int size, char c)
 	arr = (char *) malloc(size * sizeof(char));
 
 	s = malloc(INT_MAX);
-	if (s == NULL)
+	if (s == NULL || arr ==NULL)
 	{
 		return (NULL);
 	}
