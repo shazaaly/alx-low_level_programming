@@ -6,12 +6,12 @@
 char *argstostr(int ac, char **av)
 {
 	int i;
+	int tlength = 0;
 
 	if (ac == 0 || av == NULL)
 	{
         return (NULL);
     }
-	int tlength = 0;
 
 	for (i = 0; i < ac; i++)
 	{
