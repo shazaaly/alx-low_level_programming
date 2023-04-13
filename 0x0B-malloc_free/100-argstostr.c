@@ -11,7 +11,7 @@ char **strtow(char *str)
 	while (str[i] != '\0')
 	{
 		length++;
-		str++;
+		i++;
 	}
 
 	char *p = malloc((length + 1) * sizeof(char));
