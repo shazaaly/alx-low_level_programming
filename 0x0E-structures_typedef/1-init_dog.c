@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <string.h>
+#include "dog.h"
 /**
 * init_dog - initializes a dog structure with given values
 * @d: pointer to a struct dog to be initialized
