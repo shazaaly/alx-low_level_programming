@@ -1,6 +1,10 @@
 #include "variadic_functions.h"
-
-
+/**
+* print_all - prints a list of arguments of various types
+* @format: a string of format specifiers for the arguments
+* Description: This function takes a string of format specifiers and a variable
+* Return: void
+*/
 void print_all(const char * const format, ...)
 {
 	va_list list;
