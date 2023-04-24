@@ -3,6 +3,8 @@
 * print_all - prints a list of arguments of various types
 * @format: a string of format specifiers for the arguments
 * Description: This function takes a string of format specifiers and a variable
+* number of arguments, and prints each argument according to its corresponding
+* format specifier. The format specifiers can be 'c' (char), 'i' (integer),
 * Return: void
 */
 void print_all(const char * const format, ...)
