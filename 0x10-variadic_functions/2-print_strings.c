@@ -1,6 +1,12 @@
 #include "variadic_functions.h"
-
-
+/**
+* print_strings - prints a variable number of strings
+* @separator: string to print between strings
+* @n: number of strings to print
+* ...: variable arguments containing the strings to print
+* Description: This function takes a variable number of string arguments
+* Return: void
+*/
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list list;
@@ -13,13 +19,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		if (str == NULL)
 		{
-			printf("nil");
+			printf("(nil)");
 		}
 		if (separator == NULL)
 		{
 			printf("%s", str);
 		}
-		else if(i < n - 1)
+		else if(i < n - 1 && str != NULL)
 		{
 			printf("%s%s", str, separator);
 		}
