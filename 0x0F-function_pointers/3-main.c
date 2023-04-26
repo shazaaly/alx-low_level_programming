@@ -2,8 +2,13 @@
 #include <stdlib.h>
 #include "3-calc.h"
 #include "function_pointers.h"
-
-int main(int argc , char* argv[])
+/**
+* main - Entry point
+* @argc: The number of command-line arguments
+* @argv: An array containing the command-line arguments
+* Return: 0 if successful, 98 if incorrect number of arguments given,
+*/
+int main(int argc, char *argv[])
 {
 	int a, b, result;
 	int (*op_func)(int, int);
@@ -18,7 +23,6 @@ int main(int argc , char* argv[])
 
 	op_func = get_op_func(argv[3]);
 	result = op_func(a, b);
-    printf("%d\n", result);
-
+	printf("%d\n", result);
 	return (0);
 }
