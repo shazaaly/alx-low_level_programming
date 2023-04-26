@@ -1,10 +1,10 @@
 #include "3-calc.h"
+#include <stdlib.h>
 #include "function_pointers.h"
 #include <stdio.h>
 
 int (*get_op_func(char *s))(int, int)
 {
-	const int EXPECTED_ARGS = 2;
 	op_t ops[] =
 	{
 		{"+", op_add},
@@ -14,17 +14,19 @@ int (*get_op_func(char *s))(int, int)
         {"%", op_mod},
         {NULL, NULL}
     };
-    int i;
+    int i = 0;
 
-	if (s != '+' || s! = '-' || s != '*' || s != '%')
+	if (*s == '+' || *s == '-' || *s == '*' || *s == '%')
 	{
-		return ("Error\n");
-		exit(99);
+		while (*ops[i].op == *s && *(s + 1) == '\0')
+		{
+			return ops[i].f;
+			i++;
+		}
 	}
-	if (argc != EXPECTED_ARGS)
+	else
 	{
-		return ("Error\n");
 		exit(98);
 	}
-	get_op_func(ops[i]);
+	return (NULL);
 }
