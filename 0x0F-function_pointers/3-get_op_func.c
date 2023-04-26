@@ -20,13 +20,13 @@ int (*get_op_func(char *s))(int, int)
 };
 int i = 0;
 
-if (*s == '+' || *s == '-' || *s == '*' || *s == '%')
+while (ops[i].op != NULL)
 {
-	while (*ops[i].op == *s && *(s + 1) == '\0')
-	{
-		return (ops[i].f);
-		i++;
-		}
-	}
+if (*(ops[i].op) == *s)
+{
+	return (ops[i].f);
+	i++;
+}
+}
 return (NULL);
 }
