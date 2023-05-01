@@ -19,7 +19,7 @@ size_t print_listint(const listint_t *h)
 
 	while (ptr != NULL)
 	{
-		printf("%lu", (unsigned long)ptr->n);
+		printf("%d", ptr->n);
 		if (ptr->next == NULL)
 		{
 			printf("\n");
