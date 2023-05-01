@@ -1,21 +1,13 @@
 #include "lists.h"
-#include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 /**
 * printList - Prints the strings in a linked list
 * @head: Pointer to the head of the list
 */
-void printList(list_t *head)
+void myStartupFun (void) __attribute__ ((constructor));
+void myStartupFun (void)
 {
-	list_t *node = head;
-
-	while (node != NULL)
-	{
-		printf("%s", node->str);
-		node = node->next;
-	}
-
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
 
