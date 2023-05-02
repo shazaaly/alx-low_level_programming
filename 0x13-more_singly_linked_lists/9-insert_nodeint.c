@@ -27,7 +27,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		free(newNode);
 	}
-newNode->n = n;
+	newNode->n = n;
 	while (ptr != NULL)
 	{
 		if (steps == idx)
@@ -37,6 +37,7 @@ newNode->n = n;
 			return (newNode);
 		}
 		ptr = ptr->next;
+		steps++;
 	}
 	return (NULL);
 
