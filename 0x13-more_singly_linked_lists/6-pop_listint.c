@@ -15,8 +15,6 @@ int pop_listint(listint_t **head)
 
 	if (*head == NULL)
 	{
-		free(*head);
-		*head = NULL;
 		return (0);
 	}
 	nextNode = ptr->next;
