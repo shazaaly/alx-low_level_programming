@@ -7,9 +7,9 @@
 int get_endianness(void)
 {
 	int i = 1;
-	chat *ptr = (char *)&i;
+	char *ptr = (char *)&i;
 
-	if (ptr == 1)
+	if (*ptr == 1)
 	{
 		return (1);
 	}
