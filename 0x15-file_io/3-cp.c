@@ -64,8 +64,8 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 		if (bytes_written != bytes_read)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", file_to_name);
-			fd_closer(fd);
-			fd_closer(fd1);
+			close(fd);
+			close(fd1);
 			exit(99);
 		}
 	}
@@ -73,12 +73,12 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 	if (bytes_read == -1)
 	{
 	dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from_name);
-	fd_closer(fd);
-	fd_closer(fd1);
+	close(fd);
+	close(fd1);
 	exit(98);
 	}
-	fd_closer(fd);
-	fd_closer(fd1);
+	close(fd);
+	close(fd1);
 	return (0);
 }
 
@@ -113,7 +113,7 @@ int open_dest(const char *file_to_name)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n",
 			file_to_name);
-			fd_closer(fd);
+			close(fd);
 			exit(99);
 	}
 	return (fd);
