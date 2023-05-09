@@ -13,22 +13,24 @@ void print_error(char* message) {
 }
 
 int main(int argc, char** argv) {
+	int fd;
+	Elf64_Ehdr header;
+	int i;
+
+
     if (argc != 2) {
         print_error("Usage: elf_header elf_filename");
     }
 
-    int fd = open(argv[1], O_RDONLY);
+    fd = open(argv[1], O_RDONLY);
     if (fd == -1) {
         print_error(strerror(errno));
     }
 
-    // Read the ELF header
-    Elf64_Ehdr header;
     if (read(fd, &header, sizeof(header)) != sizeof(header)) {
         print_error(strerror(errno));
     }
 
-    // Verify that the file is an ELF file
     if (header.e_ident[EI_MAG0] != ELFMAG0 ||
         header.e_ident[EI_MAG1] != ELFMAG1 ||
         header.e_ident[EI_MAG2] != ELFMAG2 ||
@@ -36,10 +38,9 @@ int main(int argc, char** argv) {
         print_error("Not an ELF file");
     }
 
-    // Print the header information
     printf("ELF Header:\n");
     printf("Magic:   ");
-    for (int i = 0; i < EI_NIDENT; i++) {
+    for (i = 0; i < EI_NIDENT; i++) {
         printf("%02x ", header.e_ident[i]);
     }
     printf("\n");
