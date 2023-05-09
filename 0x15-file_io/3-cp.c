@@ -71,13 +71,6 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 		}
 	}
 	/*Check if read or write errors occurred*/
-	if (bytes_read != bytes_written)
-	{
-	dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from_name);
-	fd_closer(fd);
-	fd_closer(fd1);
-	exit(98);
-	}
 	if (bytes_read == -1)
 	{
 	dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from_name);
@@ -100,7 +93,7 @@ int open_source(const char *file_from_name)
 	int fd;
 
 	fd = open(file_from_name, O_RDONLY);
-	if (fd == -1)
+	if (fd == -1 || buffer == -1)
 	{
 		dprintf(STDERR_FILENO, "Can't read from file %s\n", file_from_name);
 		exit(98);
@@ -117,7 +110,7 @@ int open_dest(const char *file_to_name)
 	int fd;
 
 	fd = open(file_to_name, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (fd == -1)
+	if (fd == -1 || buffer == -1)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n",
 			file_to_name);
