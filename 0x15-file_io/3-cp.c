@@ -23,10 +23,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	/*Open the source file for reading*/
-	if (copy_file(file_from_name, file_to_name) == -1)
-	{
-		exit(99);
-	}
+	copy_file(file_from_name, file_to_name);
 	return (0);
 }
 /**
