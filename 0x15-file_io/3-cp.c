@@ -14,16 +14,14 @@
 */
 int main(int argc, char *argv[])
 {
-	const char *file_from_name;
-	const char *file_to_name;
+	const char *file_from_name = argv[1];
+	const char *file_to_name = argv[2];
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	file_from_name = argv[1];
-	file_to_name = argv[2];
 	/*Open the source file for reading*/
 	copy_file(file_from_name, file_to_name);
 	return (0);
@@ -51,7 +49,7 @@ int fd_closer(int fd)
 */
 int copy_file(const char *file_from_name, const char *file_to_name)
 {
-	int bytes_read, bytes_written;
+	ssize_t bytes_read, bytes_written;
 	int fd;
 	int fd1;
 	char buffer[1024];
@@ -85,7 +83,7 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 	return (0);
 }
 
-/*
+/**
 * open_source - opens the source file for reading
 * @file_from_name: the name of the source file
 * Return: the file descriptor on success, -1 on failure
@@ -111,7 +109,7 @@ int open_dest(const char *file_to_name)
 {
 	int fd;
 
-	fd = open(file_to_name, O_WRONLY | O_CREAT);
+	fd = open(file_to_name, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n",
