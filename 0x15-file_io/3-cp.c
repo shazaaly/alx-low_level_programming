@@ -33,9 +33,11 @@ int main(int argc, char *argv[])
 */
 int fd_closer(int fd)
 {
+	if (close(fd) == -1)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
-
+	}
 
 	return (0);
 }
@@ -63,15 +65,8 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 		if (bytes_written != bytes_read)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", file_to_name);
-		if (close(fd) == -1)
-		{
 			fd_closer(fd);
-		}
-		if (close(fd1) == -1)
-		{
 			fd_closer(fd1);
-		}
-
 			exit(99);
 		}
 	}
@@ -79,26 +74,12 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 	if (bytes_read == -1)
 	{
 	dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from_name);
-	if (close(fd1) == -1)
-	{
-		fd_closer(fd);
-	}
-
-	if (close(fd1) == -1)
-	{
-		fd_closer(fd1);
-	}
+	fd_closer(fd);
+	fd_closer(fd1);
 	exit(98);
 	}
-	if (close(fd) == -1)
-	{
-		fd_closer(fd);
-	}
-	if (close(fd) == -1)
-	{
-		fd_closer(fd1);
-
-	}
+	fd_closer(fd);
+	fd_closer(fd1);
 	return (0);
 }
 
