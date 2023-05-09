@@ -14,14 +14,16 @@
 */
 int main(int argc, char *argv[])
 {
-	const char *file_from_name = argv[1];
-	const char *file_to_name = argv[2];
+	const char *file_from_name;
+	const char *file_to_name;
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+	file_from_name = argv[1];
+	file_to_name = argv[2];
 	/*Open the source file for reading*/
 	copy_file(file_from_name, file_to_name);
 	return (0);
