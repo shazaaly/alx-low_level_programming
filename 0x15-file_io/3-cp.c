@@ -95,7 +95,7 @@ int open_source(const char *file_from_name)
 	if (fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Can't read from file %s\n", file_from_name);
-		exit (98);
+		exit(98);
 	}
 	return (fd);
 }
@@ -114,7 +114,7 @@ int open_dest(const char *file_to_name)
 		dprintf(STDERR_FILENO, "Can't write to %s\n",
 			file_to_name);
 			fd_closer(fd);
-			exit (99);
+			exit(99);
 	}
 	return (fd);
 }
