@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <errno.h>
 
-
 /**
 * main - entry point for the cp command program
 * @argc: the number of command-line arguments
@@ -39,8 +38,7 @@ int fd_closer(int fd)
 {
 	if (close(fd) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d: %s\n", fd,
-		 strerror(errno));
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 	return (0);
@@ -66,20 +64,19 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 	while ((bytes_read = read(fd, buffer, sizeof(buffer))) > 0)
 	{
 		bytes_written = write(fd1, buffer, bytes_read);
-		if (bytes_written == -1)
+		if (bytes_written != bytes_read)
 		{
+			dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", file_to_name);
+			fd_closer(fd);
+			fd_closer(fd1);
+			exit(99);
 
-		dprintf(STDERR_FILENO, "rror: Can't write to  %s\n", file_to_name);
-		fd_closer(fd);
-		fd_closer(fd1);
-		exit(99);
 		}
 	}
 	/*Check if read or write errors occurred*/
 	if (bytes_read == -1)
 	{
-	dprintf(STDERR_FILENO, "Error: Can't read from %s: %s\n",
-	file_from_name, strerror(errno));
+	dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from_name);
 	fd_closer(fd);
 	fd_closer(fd1);
 	exit(98);
@@ -101,8 +98,7 @@ int open_source(const char *file_from_name)
 	fd = open(file_from_name, O_RDONLY);
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't read from file %s: %s\n", file_from_name,
-			strerror(errno));
+		dprintf(STDERR_FILENO, "Can't read from file %s\n", file_from_name);
 	}
 	return (fd);
 }
@@ -118,8 +114,9 @@ int open_dest(const char *file_to_name)
 	fd = open(file_to_name, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't write to %s: %s\n",
-			file_to_name, strerror(errno));
+		dprintf(STDERR_FILENO, "Can't write to %s\n",
+			file_to_name);
+			fd_closer(fd);
 	}
 	return (fd);
 }
