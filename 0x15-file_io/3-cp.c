@@ -18,28 +18,15 @@ int main(int argc, char *argv[])
 	const char *file_from_name = argv[1];
 	const char *file_to_name = argv[2];
 
-	argc_checker(argc); /*check no of arguments*/
-	/*Open the source file for reading*/
-	if (copy_file(file_from_name, file_to_name) == -1)
-	{
-		exit(1);
-	}
-
-
-	return (0);
-}
-/**
-* argc_checker - checks the number of command-line arguments
-* @argc: the number of command-line arguments
-* @argv: an array of strings containing the command-line arguments
-* Return: 0 on success, exits with status code 97 if argc is not equal to 3
-*/
-int argc_checker(int argc)
-{
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
+	}
+	/*Open the source file for reading*/
+	if (copy_file(file_from_name, file_to_name) == -1)
+	{
+		exit(1);
 	}
 	return (0);
 }
@@ -71,22 +58,8 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 	int fd1;
 	char buffer[1024];
 
-	fd = open(file_from_name, O_RDONLY);
-	if (fd == -1)
-	{
-	dprintf(STDERR_FILENO, "Can't read from file %s: %s\n", file_from_name,
-	 strerror(errno));
-	exit(98);
-	}
-	/*Open the destination file for writing*/
-	fd1 = open(file_to_name, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (fd1 == -1)
-	{
-		dprintf(STDERR_FILENO, "Can't write to %s: %s\n",
-		 file_to_name, strerror(errno));
-		fd_closer(fd);
-		exit(99);
-	}
+	fd = open_source(file_from_name);
+	fd1 = open_dest(file_to_name);
 
 	/*Copy the contents of the source file to the destination file*/
 
@@ -116,3 +89,37 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 	return (0);
 }
 
+/**
+* open_source - opens the source file for reading
+* @file_from_name: the name of the source file
+* Return: the file descriptor on success, -1 on failure
+*/
+int open_source(const char *file_from_name)
+{
+	int fd;
+
+	fd = open(file_from_name, O_RDONLY);
+	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Can't read from file %s: %s\n", file_from_name,
+			strerror(errno));
+	}
+	return (fd);
+}
+/**
+* open_dest - opens the destination file for writing
+* @file_to_name: the name of the destination file
+* Return: the file descriptor on success, -1 on failure
+*/
+int open_dest(const char *file_to_name)
+{
+	int fd;
+
+	fd = open(file_to_name, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Can't write to %s: %s\n",
+			file_to_name, strerror(errno));
+	}
+	return (fd);
+}
