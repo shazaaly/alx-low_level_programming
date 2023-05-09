@@ -6,9 +6,6 @@
 #include <stdlib.h>
 #include <errno.h>
 
-int argc_checker(int argc);
-int fd_closer(int fd);
-int copy_file(const char *file_from_name, const char *file_to_name);
 
 /**
 * main - entry point for the cp command program
