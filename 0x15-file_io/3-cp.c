@@ -109,7 +109,7 @@ int open_dest(const char *file_to_name)
 {
 	int fd;
 
-	fd = open(file_to_name, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd = open(file_to_name, O_WRONLY | O_CREAT);
 	if (fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n",
