@@ -3,6 +3,8 @@
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
+
 /**
 * read_textfile - reads a text file and prints its contents to stdout
 * @filename: name of the file to read
@@ -28,10 +30,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 	{
-		free(buff)
+		free(buff);
 		return (0);
 	}
-	bytes_read = read(filename, buff, letters);
+	bytes_read = read(fd, buff, letters);
 	if (bytes_read < 0)
 	{
 		free(buff);
