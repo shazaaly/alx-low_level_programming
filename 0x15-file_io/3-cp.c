@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	/*Open the source file for reading*/
 	if (copy_file(file_from_name, file_to_name) == -1)
 	{
-		exit(1);
+		exit(99);
 	}
 	return (0);
 }
@@ -70,7 +70,6 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 			fd_closer(fd);
 			fd_closer(fd1);
 			exit(99);
-
 		}
 	}
 	/*Check if read or write errors occurred*/
