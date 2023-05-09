@@ -51,7 +51,7 @@ int fd_closer(int fd)
 */
 int copy_file(const char *file_from_name, const char *file_to_name)
 {
-	ssize_t bytes_read, bytes_written;
+	int bytes_read, bytes_written;
 	int fd;
 	int fd1;
 	char buffer[1024];
