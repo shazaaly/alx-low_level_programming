@@ -83,7 +83,7 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 	return (0);
 }
 
-/**
+/*
 * open_source - opens the source file for reading
 * @file_from_name: the name of the source file
 * Return: the file descriptor on success, -1 on failure
@@ -93,7 +93,7 @@ int open_source(const char *file_from_name)
 	int fd;
 
 	fd = open(file_from_name, O_RDONLY);
-	if (fd == -1 || buffer == -1)
+	if (fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Can't read from file %s\n", file_from_name);
 		exit(98);
@@ -110,7 +110,7 @@ int open_dest(const char *file_to_name)
 	int fd;
 
 	fd = open(file_to_name, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (fd == -1 || buffer == -1)
+	if (fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n",
 			file_to_name);
