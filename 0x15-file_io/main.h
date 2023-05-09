@@ -8,5 +8,6 @@ int fd_closer(int fd);
 int copy_file(const char *file_from_name, const char *file_to_name);
 int open_source(const char *file_from_name);
 int open_dest(const char *file_to_name);
+void print_error(char* message);
 #endif
 
