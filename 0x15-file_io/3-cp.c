@@ -5,7 +5,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <errno.h>
-
 /**
 * main - entry point for the cp command program
 * @argc: the number of command-line arguments
@@ -65,7 +64,9 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 		if (bytes_written != bytes_read)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", file_to_name);
+			close(fd);
 			fd_closer(fd);
+			close(fd1);
 			fd_closer(fd1);
 			exit(99);
 		}
@@ -74,11 +75,16 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 	if (bytes_read == -1)
 	{
 	dprintf(STDERR_FILENO, "Error: Can't read from %s\n", file_from_name);
+	close(fd);
 	fd_closer(fd);
+	close(fd1);
 	fd_closer(fd1);
 	exit(98);
 	}
+
+	close(fd);
 	fd_closer(fd);
+	close(fd1);
 	fd_closer(fd1);
 	return (0);
 }
@@ -114,6 +120,7 @@ int open_dest(const char *file_to_name)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n",
 			file_to_name);
+			close(fd);
 			fd_closer(fd);
 			exit(99);
 	}
