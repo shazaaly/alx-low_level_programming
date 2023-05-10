@@ -99,7 +99,7 @@ int open_source(const char *file_from_name)
 	fd = open(file_from_name, O_RDONLY);
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't read from file %s\n", file_from_name);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from_name);
 		exit(98);
 	}
 	return (fd);
