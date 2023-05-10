@@ -1,11 +1,14 @@
 #include <stdio.h>
-#include "main.h"
+
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <errno.h>
 
+int copy_file(const char file_from_name, const charfile_to_name);
+int open_source(const char file_from_name);
+int open_dest(const charfile_to_name);
 /**
 * main - entry point for the cp command program
 * @argc: the number of command-line arguments
