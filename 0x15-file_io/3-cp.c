@@ -72,8 +72,8 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 	fd_closer(fd1);
 	exit(98);
 	}
-		bytes_written = write(fd1, buffer, bytes_read);
-		if (bytes_written != bytes_read)
+		/*bytes_written = write(fd1, buffer, bytes_read);*/
+		if (bytes_read != write(fd1, buffer, bytes_read))
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", file_to_name);
 			fd_closer(fd);
