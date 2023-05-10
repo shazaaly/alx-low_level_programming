@@ -107,6 +107,7 @@ int open_source(const char *file_from_name)
 /**
 * open_dest - opens the destination file for writing
 * @file_to_name: the name of the destination file
+* @fd1: file desc of source file.
 * Return: the file descriptor on success, -1 on failure
 */
 int open_dest(const char *file_to_name, int fd1)
