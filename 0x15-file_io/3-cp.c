@@ -7,7 +7,7 @@
 /*protype*/
 int copy_file(const char *file_from_name, const char *file_to_name);
 int open_source(const char *file_from_name);
-int open_dest(const char *file_to_name);
+int open_dest(const char *file_to_name, int fd);
 /**
 * main - entry point for the cp command program
 * @argc: the number of command-line arguments
@@ -59,7 +59,7 @@ int copy_file(const char *file_from_name, const char *file_to_name)
 	char buffer[1024];
 
 	fd = open_source(file_from_name);
-	fd1 = open_dest(file_to_name);
+	fd1 = open_dest(file_to_name, fd);
 
 	/*Copy the contents of the source file to the destination file*/
 
@@ -109,16 +109,16 @@ int open_source(const char *file_from_name)
 * @file_to_name: the name of the destination file
 * Return: the file descriptor on success, -1 on failure
 */
-int open_dest(const char *file_to_name)
+int open_dest(const char *file_to_name, int fd1)
 {
 	int fd;
 
 	fd = open(file_to_name, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't write to %s\n",
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n",
 			file_to_name);
-			fd_closer(fd);
+			fd_closer(fd1);
 			exit(99);
 	}
 	return (fd);
