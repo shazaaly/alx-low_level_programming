@@ -24,31 +24,43 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new->n = n;
 	new->prev = NULL;
 	new->next = NULL;
-
-	if (*h == NULL)
+	/* Handle the case where the list is empty and idx > 0 */
+	if (*h == NULL && idx > 0)
 	{
+		free(new);
 		return (NULL);
 	}
+
+	/* Handle the case where the new node needs to be inserted at the beginning of the list */
 	if (idx == 0)
 	{
+		/* Update the next pointer of the new node */
 		new->next = *h;
+		/* Update the prev pointer of the second node, if it exists */
 		if (*h != NULL)
 		{
 			(*h)->prev = new;
-			*h = new;
-			return (new);
 		}
-
+		/* Update the head pointer to point to the new node */
+		*h = new;
+		return (new);
 	}
+	/* Traverse the list to find the node before the insertion point */
 	while (current != NULL && dist < idx - 1)
 	{
 		dist++;
 		current = current->next;
 	}
+	/* Handle the case where idx is out of bounds */
+	if (current == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+	/* Insert the new node at the specified index */
 	new->next = current->next;
 	current->next = new;
 	new->prev = current;
-
+	/* Return a pointer to the new node */
 	return (new);
 }
-
