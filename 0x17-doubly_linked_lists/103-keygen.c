@@ -1,21 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <linux/kernel.h>
+#include <linux/module.h>
+#include <linux/string.h>
 
-int main(int argc, char *argv[]) {
-    char *input_str = NULL;
+int init_module(void)
+{
+    const char *input_str = NULL;
     char *password = NULL;
     int i, len;
 
     if (argc < 2) {
-        printf("Usage: %s <input string>\n", argv[0]);
-        return (1);
+        printk(KERN_INFO "Usage: %s <input string>\n", THIS_MODULE->name);
+        return -EINVAL;
     }
 
     input_str = argv[1];
     len = strlen(input_str);
 
-    password = malloc((len + 1) * sizeof(char));
+    password = kmalloc((len + 1) * sizeof(char), GFP_KERNEL);
+    if (!password) {
+        printk(KERN_ERR "Failed to allocate memory\n");
+        return -ENOMEM;
+    }
 
     for (i = 0; i < len; i++) {
         password[i] = input_str[i] + 1;
@@ -25,11 +30,17 @@ int main(int argc, char *argv[]) {
         password[i] = 'A' + i;
     }
 
-    password[9] = '\0';
+    password[8] = '\0';
 
-    printf("%s\n", password);
+    printk(KERN_INFO "%s\n", password);
 
-    free(password);
+    kfree(password);
 
-    return (0);
+    return 0;
 }
+
+void cleanup_module(void)
+{
+    printk(KERN_INFO "Module unloaded\n");
+}
+
