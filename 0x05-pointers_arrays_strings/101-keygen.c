@@ -20,6 +20,7 @@
 		str++;
 
 	}
+	return (sum);
 
  }
 int main(void)
