@@ -5,6 +5,7 @@
 * @s: The string to convert.
 * Return: The integer value of the string.
 */
+/*   +++++ +-+ 2242454   */
 int _atoi(char *s)
 {
 	int j;
@@ -15,10 +16,9 @@ int _atoi(char *s)
 	{
 		if (*s == '-')
 		{
-			if (*(s + 1) >= '0' && *(s + 1) <= '9')
-			{
+
 				sign = -sign;
-			}
+
 
 		}
 			s++;
