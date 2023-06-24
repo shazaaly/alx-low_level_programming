@@ -13,10 +13,12 @@ int main(void)
 {
 	char password[PASS_LEN + 1];
 	int i;
+	int sum = 0;
+	int random_num;
 
 	srand(time(NULL));
 
-	int random_num = rand() % 52; /*small + caps*/
+	random_num = rand() % 52; /*small + caps*/
 
 	for (i = 0; i < PASS_LEN; i++)
 	{
@@ -32,5 +34,10 @@ int main(void)
 		password[PASS_LEN] = '\0';
 
 	}
-	printf("%s\n", password);
+	for ( i = 0; i < 20; i++)
+	{
+		sum = '0' + password[i];
+
+	}
+	return (sum);
 }
