@@ -18,7 +18,7 @@ int is_prime_helper(int n, int i)
 	{
 		return (0);
 	}
-	else if (i > _sqrt_recursion(n))
+	else if (i > sqrt(n))
 	{
 		return (1);
 	}
@@ -43,4 +43,5 @@ int is_prime_number(int n)
 	}
 
 }
+
 
