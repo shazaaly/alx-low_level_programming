@@ -4,7 +4,6 @@
 * @n: The integer to check
 * Return: 1 if n is prime, 0 otherwise
 */
-
 /**
  * is_prime_helper - checks if a number is prime using recursion
  * @n: the number to check for primality
@@ -41,7 +40,6 @@ int is_prime_number(int n)
 	{
 		return (is_prime_helper(n, 3));
 	}
-
 
 }
 
