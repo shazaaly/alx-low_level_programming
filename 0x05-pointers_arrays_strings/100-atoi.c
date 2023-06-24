@@ -23,6 +23,7 @@ int _atoi(char *s)
 	j = 0;
 	while (*s != '\0')
 	{
+
 		if (s[j] >= '0' && s[j] <= '9')
 		{
 			result = result * 10 + (s[j] - '0');
