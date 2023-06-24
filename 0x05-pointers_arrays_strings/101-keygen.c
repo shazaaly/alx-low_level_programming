@@ -25,33 +25,25 @@
  }
 int main(void)
 {
-	char password[PASS_LEN + 1];
+	char password[PASS_LEN];
 	int i;
 	int sum = 0;
 	int random_num;
 
 	srand(time(NULL));
 
-	random_num = rand() % 52; /*small + caps*/
 
 	for (i = 0; i < PASS_LEN; i++)
 	{
+		random_num = rand() % 78;
 
-		if (random_num < 26)
-		{
-			password[i] = 'a' + random_num;
-		}
-		else
-		{
-			password[i] = 'A' + (random_num - 26) ;  /*65*/
-		}
-		password[PASS_LEN] = '\0';
+		password[i] = random_num + '0';
+
+		sum += password[i];
 
 	}
-	for ( i = 0; i < 20; i++)
-	{
-		sum = '0' + password[i];
+	password[PASS_LEN] = '\0';
+	printf("%ul\n", sum);
 
-	}
-	return (sum);
+	return (0);
 }
