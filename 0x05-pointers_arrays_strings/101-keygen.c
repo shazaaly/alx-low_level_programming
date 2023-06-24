@@ -9,6 +9,19 @@
  *
  * Return: Always 0.
  */
+
+ unsigned long check_sum(char *str)
+ {
+	unsigned long sum = 0;
+
+	while (*str != '\0')
+	{
+		sum += *str;
+		str++;
+
+	}
+
+ }
 int main(void)
 {
 	char password[PASS_LEN + 1];
