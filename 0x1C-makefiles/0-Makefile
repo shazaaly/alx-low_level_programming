@@ -1,3 +1,6 @@
+CC = gcc
 
 all:	school
+
 school:	a.out m.h main.c school.c
+	$(CC) main.c school.c -o school
