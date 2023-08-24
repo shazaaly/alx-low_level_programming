@@ -5,4 +5,6 @@ NAME= school
 
 all: $(Name)
  $(Name):	$(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $^ -o $@
+
+
