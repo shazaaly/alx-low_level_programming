@@ -9,7 +9,7 @@ $(NAME):  $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) *.out $(NAME)
+	$(RM) *~$(NAME)
 
 oclean:
 	$(RM) $(OBJ)
