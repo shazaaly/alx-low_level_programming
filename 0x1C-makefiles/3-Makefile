@@ -12,12 +12,12 @@ clean:
 	$(RM) *.out $(NAME)
 
 oclean:
-	$(RM) *.o
+	$(RM) $(OBJ)
 
 fclean:
-	$(RM) *.o *.out $(NAME)
+	clean oclean
 
 re:
-	$(CC) $(OBJ) -o $(NAME)
+	all
 
 
