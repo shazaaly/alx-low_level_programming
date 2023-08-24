@@ -7,17 +7,13 @@ CFLAGS=-Wall -Werror -Wextra -pedantic
 
 all: $(NAME)
 $(NAME): $(OBJ)
-$(CC) $(SRC) -o $(NAME)
+$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:
 $(RM) \*~ $(NAME)
 
-#oclean: deletes the object files
-
 oclean:
 $(RM) $(OBJ)
-
-##fclean: deletes all Emacs and Vim temporary files, the executable, and the object files
 
 fclean:
 clean oclean
