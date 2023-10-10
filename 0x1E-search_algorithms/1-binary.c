@@ -39,7 +39,7 @@ int binary_search(int *array, size_t size, int value)
 
 	printArray(array, size);
 
-	if (array == NULL || size == 0)
+	if (array == NULL)
 	{
 		return (-1);
 	}
