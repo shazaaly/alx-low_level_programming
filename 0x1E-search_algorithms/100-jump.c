@@ -11,41 +11,37 @@
 * Return: The index where `value` is located, or -1 if not found.
 */
 
+#include <stdio.h>
+#include <math.h>
+
 int jump_search(int *array, size_t size, int value)
 {
-	size_t left = 0;
-	size_t right = 0;
-	size_t jump = (int)sqrt(size);
-	size_t i;
+	int step;
+	int prev = 0;
+
 
 	if (array == NULL || size == 0)
 	{
 		return (-1);
 	}
-
-	while (right < size && array[right] < value)
+	step = (int)sqrt(size);
+	while (array[(int)fmin(step, size) - 1] < value)
 	{
-		left = right;
-		right += jump;
-		printf("Value checked array[%ld] = [%d]\n", right, array[right]);
-
+		prev = step;
+		step += (int)sqrt(size);
+		if (prev >= size)
+		{
+			return (-1);
+		}
 	}
-
-	if (right >= size)
+	for (int i = prev; i < fmin(step, size); i++)
 	{
-		right = size - 1;
-
-	}
-	for (i = left; i <= right; i++)
-	{
-		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 		if (array[i] == value)
 		{
+			printf("Comparing value %d with array[%d] = %d\n", value, i, array[i]);
 			return (i);
-		}
-
+	    }
+	    printf("Comparing value %d with array[%d] = %d\n", value, i, array[i]);
 	}
 	return (-1);
-
-
 }
