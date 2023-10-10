@@ -38,18 +38,12 @@ int binary_search(int *array, size_t size, int value)
 	/* size_t mid; */
 	size_t mid = left + (right - left) / 2;
 
-
 	printArray(array, size);
 	if (mid && mid % 2 == 0)
-	{
 		mid--;
 
-	}
-
 	if (array == NULL)
-	{
 		return (-1);
-	}
 
 	while (left <= right)
 	{
